@@ -24,7 +24,7 @@ class VisitorsController < ApplicationController
     ballot_string = params[:av][:votes]
 
     ballot_string.split(/\n/).each do |ar1|
-      all_ballots << ar1.split(',')
+      all_ballots << ar1.split(',').map{|a| a.chomp}
     end
 
 
