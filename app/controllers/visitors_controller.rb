@@ -19,7 +19,7 @@ class VisitorsController < ApplicationController
 
   def alternative_vote_submit
     all_ballots = []
-    ballots = []
+
 
     ballot_string = params[:av][:votes]
 
@@ -29,13 +29,16 @@ class VisitorsController < ApplicationController
 
 
     loop do
+      ballots = []
       all_ballots.each do |ballot|
-        ballots << ballot[0]
+        if ballot[0] != nil
+          ballots << ballot[0]
+        end
       end
 
       votes = vote_counter(ballots)
       @winner = votes.max_by{|k,v| v }[0]
-      win_percentage = votes[@winner] * 100 / all_ballots.count
+      win_percentage = votes[@winner] * 100 / ballots.count
       if win_percentage >= 50
         break
       end
