@@ -1,0 +1,10 @@
+<%= form_for(:av) do |f| %>
+    <div class="field">
+      <%= f.label 'Votes' %><br>
+      <%= f.text_area :votes, :rows=>20, :cols=>60 %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Submit' %>
+    </div>
+<% end %>

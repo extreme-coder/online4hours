@@ -1,0 +1,10 @@
+<%= form_for(:collatz) do |f| %>
+    <div class="field">
+      <%= f.label 'Number' %><br>
+      <%= f.text_field :num%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Submit' %>
+    </div>
+<% end %>

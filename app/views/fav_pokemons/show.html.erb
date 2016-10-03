@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gen:</strong>
+  <%= @fav_pokemon.gen %>
+</p>
+
+<p>
+  <strong>P type:</strong>
+  <%= @fav_pokemon.p_type %>
+</p>
+
+<p>
+  <strong>Pokemon:</strong>
+  <%= @fav_pokemon.pokemon.name %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_fav_pokemon_path(@fav_pokemon) %> |
+<%= link_to 'Back', fav_pokemons_path %>

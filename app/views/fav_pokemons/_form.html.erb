@@ -1,0 +1,30 @@
+<%= form_for(@fav_pokemon) do |f| %>
+  <% if @fav_pokemon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fav_pokemon.errors.count, "error") %> prohibited this fav_pokemon from being saved:</h2>
+
+      <ul>
+      <% @fav_pokemon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :gen %><br>
+    <%= f.number_field :gen %>
+  </div>
+  <div class="field">
+    <%= f.label :p_type %><br>
+    <%= f.number_field :p_type %>
+  </div>
+  <div class="field">
+    <%= f.label :pokemon %><br>
+    <%= f.collection_select(:pokemon_id, Pokemon.all, :id, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

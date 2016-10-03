@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fav Pokemons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gen</th>
+      <th>P type</th>
+      <th>Pokemon</th>
+      <th>Integer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fav_pokemons.each do |fav_pokemon| %>
+      <tr>
+        <td><%= fav_pokemon.gen %></td>
+        <td><%= fav_pokemon.p_type %></td>
+        <td><%= fav_pokemon.pokemon %></td>
+        <td><%= fav_pokemon.integer %></td>
+        <td><%= link_to 'Show', fav_pokemon %></td>
+        <td><%= link_to 'Edit', edit_fav_pokemon_path(fav_pokemon) %></td>
+        <td><%= link_to 'Destroy', fav_pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fav pokemon', new_fav_pokemon_path %>
