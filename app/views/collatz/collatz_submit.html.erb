@@ -1,1 +1,6 @@
-The number of steps is <%=@collatz.steps%>
+<h3>The number of steps is <%=@collatz.steps%></h3>
+
+<% @collatz.all_steps.each_with_index do|step, idx|%>
+  <p><%=idx+1%>: &nbsp;<%=step%></p>
+<%end%>
+
