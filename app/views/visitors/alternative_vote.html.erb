@@ -1,4 +1,13 @@
 <%= form_for(:av) do |f| %>
+    <p>This is a program to calculate the results of an <b>alternative vote.</b></p>
+    <p>After you have counted all of the ballots, Enter them into the text area like this:<br/>
+<br/>
+       A,B,C<br/>
+       B,A,C<br/>
+      <br/>
+       Press the submit button, and it should give you the winner of the election.
+    </p>
+
     <div class="field">
       <%= f.label 'Votes' %><br>
       <%= f.text_area :votes, :rows=>20, :cols=>60 %>
