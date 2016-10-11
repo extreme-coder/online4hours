@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   get 'collatz', to: 'collatz#collatz'
 
   post 'collatz', to: 'collatz#collatz_submit'
+
+  get 'radical', to: 'radical#radical'
+
+  post 'radical', to: 'radical#radical_submit'
 end

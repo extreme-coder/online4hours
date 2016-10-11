@@ -1,0 +1,15 @@
+<%= form_for(:radical) do |f| %>
+    <div class="field">
+      <%= f.label 'Number' %><br>
+      <%= f.text_field :num%>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Root' %><br>
+      <%= f.text_field :root%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Submit' %>
+    </div>
+<% end %>
