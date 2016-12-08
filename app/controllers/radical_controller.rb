@@ -6,7 +6,7 @@ class RadicalController < ApplicationController
   def radical_submit
     @num = params[:radical][:num].to_f
     @root = params[:radical][:root].to_f
-    @accuracy = 15
+    @accuracy = 5
 
     left = 0
     right = @num

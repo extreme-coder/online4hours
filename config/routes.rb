@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   get 'radical', to: 'radical#radical'
 
   post 'radical', to: 'radical#radical_submit'
+
+  get 'chi_square', to: 'chi_square#chi_square'
+
+  post 'chi_square', to: 'chi_square#chi_square_submit'
 end

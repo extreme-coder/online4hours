@@ -1,0 +1,22 @@
+<%= form_for(:av) do |f| %>
+    <p>This is a program to calculate the significance of correlation in a survey result.</p>
+    <p>Suppose you want to know the significance between the age and nationality of each person you surveyed, and you hypothesize that there is a correlation between young people and French people. You could enter your results into a table like this:<br/>
+      <br/>
+        456,567
+      <br/>
+      <br/>
+        987,438
+      <br/>
+      Press the submit button, and it should give you the chi square of the table. Enter it into a P-value calculator, and you should see if there is any correlation in the table.
+    </p>
+    <p>For the mathematics behind chi-square analysis, check out my blog post at <a href="http://online4hours.com/2016/12/07/chi-square-analysis-the-pokemon-go-survey/">Chi-Square analysis: The Pokemon GO survey.</a></p>
+
+    <div class="field">
+      <%= f.label 'Table of Data' %><br>
+      <%= f.text_area :matrix_string, :rows=>20, :cols=>60 %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Submit' %>
+    </div>
+<% end %>
