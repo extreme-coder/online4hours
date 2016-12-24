@@ -1,0 +1,20 @@
+<%= form_for(:pc) do |f| %>
+    <p>This is a randomizer for playing a party game called picturades.</p>
+    <p>Simply press one of the buttons to choose your category, and it should give you a random thing from that category, which can then draw or act as!</p>
+
+    <div class="actions">
+      <%= f.button 'Idioms Or Proverbs', name: "category", value: "4" %>
+      <%= f.button 'Movies' , name: "category", value: "0" %>
+      <%= f.button 'Characters' , name: "category", value: "2"%>
+      <%= f.button 'Kids Characters' , name: "category", value: "3"%>
+      <%= f.button 'Kids Movies' , name: "category", value: "1"%>
+      <%= f.button 'TV' , name: "category", value: "5"%>
+      <%= f.button 'Kids TV' , name: "category", value: "6"%>
+      <%= f.button 'Video Games' , name: "category", value: "7"%>
+    </div>
+<% end %>
+<p>
+  <% unless @card == nil %>
+    <h1><%= @card.name %></h1>
+  <% end %>
+</p>

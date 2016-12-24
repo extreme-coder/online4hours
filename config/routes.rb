@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cards
   resources :fav_pokemons
   resources :pokemons
   root to: 'visitors#index'
@@ -18,4 +19,8 @@ Rails.application.routes.draw do
   get 'chi_square', to: 'chi_square#chi_square'
 
   post 'chi_square', to: 'chi_square#chi_square_submit'
+
+  get 'charades', to: 'pic_charades#pic_charades'
+
+  post 'charades', to: 'pic_charades#pic_charades'
 end
