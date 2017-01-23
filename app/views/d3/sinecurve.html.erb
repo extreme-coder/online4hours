@@ -1,0 +1,44 @@
+<div id="graph"></div>
+
+  <style type="text/css">
+
+    div.bar {
+      display: inline-block;
+      width: 1px;
+      height: 75px;	/* Gets overriden by D3-assigned height below */
+      margin-right: 2px;
+      background-color: teal;
+    }
+
+  </style>
+
+<script type="text/javascript">
+
+  var dataset = [];
+  for (var i = 0; i < 350; i++) {
+    var newNumber = Math.sin(i/20.0)*10+10;
+    dataset.push(newNumber);
+  }
+  console.log(dataset);
+
+  d3.select("#graph").selectAll("div")
+      .data(dataset)
+      .enter()
+      .append("div")
+      .attr("class", "bar")
+      .style("background-color", function(d) {
+        var red = Math.round(Math.random()*256);
+        var green = Math.round(Math.random()*256);
+        var blue = Math.round(Math.random()*256);
+        var rgb = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+        return rgb;
+      })
+      .style("height", function(d) {
+        var barHeight = d * 5.0;
+        return barHeight + "px";
+      });
+
+</script>
+
+
+

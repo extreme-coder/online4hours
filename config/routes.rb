@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   get 'charades', to: 'pic_charades#pic_charades'
 
   post 'charades', to: 'pic_charades#pic_charades'
+
+  get 'sinecurve', to: 'd3#sinecurve'
 end
