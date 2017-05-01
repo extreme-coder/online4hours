@@ -25,4 +25,14 @@ Rails.application.routes.draw do
   post 'charades', to: 'pic_charades#pic_charades'
 
   get 'sinecurve', to: 'd3#sinecurve'
+
+  get 'pop_graph', to: 'd3#pop_graph'
+
+  get 'primecheck', to: 'primecheck#primecheck'
+  post 'primecheck', to: 'primecheck#primecheck'
+
+  get 'trumpcomplete', to: 'trump#complete', :defaults => { :format => 'json' }
+
+  get 'trump_speak', to: 'trump#trump_speak'
+
 end

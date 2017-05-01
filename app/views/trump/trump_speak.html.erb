@@ -1,0 +1,52 @@
+
+<%= form_for(:trump) do |f| %>
+
+    <div id="box">
+      <img id="trump" src="/assets/dumptrump.jpg"/>
+      <img id="speech" src="/assets/speechballoon.png"/>
+      <div class="field" id="text_box">
+        <%= f.label 'Type Here' %><br>
+        <%= f.text_field :prefix%>
+      </div>
+    </div>
+<% end %>
+
+<script>
+  $(function() {
+    $("#trump_prefix").autocomplete({
+      source: function (request, response) {
+        $.ajax({
+          url: "/trumpcomplete?prefix=" + request.term,
+          dataType: "json",
+          success: function (data) {
+            response(data);
+          }
+        });
+      },
+      minLength: 1
+    });
+  });
+</script>
+
+<style>
+  #box {
+    position: relative;
+  }
+
+  #speech {
+    position: absolute;
+    left: 357px;
+  }
+
+  #text_box {
+    position: absolute;
+    left: 400px;
+    top: 60px;
+  }
+
+  #trump {
+    position: absolute;
+    left: 50px;
+    top: 100px;
+  }
+</style>
